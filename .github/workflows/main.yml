@@ -17,9 +17,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-#           docker push: pc018/php-vim:tagname
+          docker push: pc018/php-vim:tagname
+          
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          push: true
-          tags: pc018/php-vim:tagname
+          context: .
+#           push: true
+          tags: user/app:latest
