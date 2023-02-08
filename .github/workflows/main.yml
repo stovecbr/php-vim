@@ -15,6 +15,6 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          registry: php-vim
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker push: pc018/php-vim:tagname
