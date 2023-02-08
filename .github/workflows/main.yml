@@ -12,10 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.3.0
       - name: Scripts
-        run: |
-          docker build -t app .
-          echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin 
-          docker tag app pc018/php-vim
-          docker push pc018/php-vim
-
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
