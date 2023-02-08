@@ -3,7 +3,7 @@ name: Build and Push image to Docker Hub
 on:
   push:
     branches:
-      - php-vim
+      - 'php-vim'
 
 jobs:
   build_and_push:
