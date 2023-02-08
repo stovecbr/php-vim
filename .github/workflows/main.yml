@@ -24,5 +24,6 @@ jobs:
         with:
           context: .
 #           push: true
-          docker push: pc018/php-vim:tagname
+#           docker push: pc018/php-vim:tagname
+          push: pc018/php-vim:tagname
           tags: user/app:latest
